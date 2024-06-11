@@ -39,9 +39,10 @@ with open(budget_data_csv) as csvfile:
               Greatest_decrease_month=row[0]
 
         front_number=number
-        
-    print("Total Month:",Total_month)
-    print("Total Amount of Profit/Losses:",Total_amount_Profit)
+    print(f"Financial Analysis")
+    print(f"----------------------------")    
+    print("Total Months:",Total_month)
+    print("Total:",Total_amount_Profit)
     #print(Changes)
 
 def average(values):
@@ -55,10 +56,10 @@ def average(values):
 
     return average
 
-print(round(average(Changes),2))
+print(f"Average Change: {round(average(Changes),2)}")
 
-print("Greatest Increase in Profits:",Greatest_increase_month,Greatest_increase_change)
-print("Greatest decrease in Profits:",Greatest_decrease_month,Greatest_decrease_change)
+print(f"Greatest Increase in Profits: {Greatest_increase_month} (${Greatest_increase_change})")
+print(f"Greatest decrease in Profits: {Greatest_decrease_month} (${Greatest_decrease_change})")
 
 analysis_output=(
     f"Financial Analysis\n"
@@ -66,8 +67,8 @@ analysis_output=(
     f"Total Months: {str(Total_month)}\n"
     f"Total:  ${str(Total_amount_Profit)}\n"
     f"Average Change: ${round(average(Changes),2)}\n"
-    f"Greatest Increase in Profits: {Greatest_increase_month} ${Greatest_increase_change}\n"
-    f"Greatest decrease in Profits: {Greatest_decrease_month} ${Greatest_decrease_change}\n"
+    f"Greatest Increase in Profits: {Greatest_increase_month} (${Greatest_increase_change})\n"
+    f"Greatest decrease in Profits: {Greatest_decrease_month} (${Greatest_decrease_change})\n"
 )
 
 output_path=os.path.join("PyBank","analysis","Analysis_text_file.txt")
