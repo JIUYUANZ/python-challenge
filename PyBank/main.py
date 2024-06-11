@@ -60,6 +60,18 @@ print(round(average(Changes),2))
 print("Greatest Increase in Profits:",Greatest_increase_month,Greatest_increase_change)
 print("Greatest decrease in Profits:",Greatest_decrease_month,Greatest_decrease_change)
 
+analysis_output=(
+    f"Financial Analysis\n"
+    f"----------------------------\n"
+    f"Total Months: {str(Total_month)}\n"
+    f"Total:  ${str(Total_amount_Profit)}\n"
+    f"Average Change: ${round(average(Changes),2)}\n"
+    f"Greatest Increase in Profits: {Greatest_increase_month} ${Greatest_increase_change}\n"
+    f"Greatest decrease in Profits: {Greatest_decrease_month} ${Greatest_decrease_change}\n"
+)
 
+output_path=os.path.join("PyBank","analysis","Analysis_text_file.txt")
+with open(output_path,"w",newline="") as txt_file:
+    txt_file.write(analysis_output)
 
   
